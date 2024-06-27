@@ -70,13 +70,15 @@ const userController = {
         from: EMAIL_ID,
         to: email,
         subject: "Password Reset",
-        text: `Click here to reset your password: https://reset-password-task.netlify.app//verify/${authString}`,
+        text: `Click here to reset your password: https://reset-password-task.netlify.app/verify/${authString}`,
       });
 
       // Sending a success response
       res
         .status(200)
-        .json({ message: "Password reset link sent to your email" });
+        .json({
+          message: "Password reset link has been sent to your email address",
+        });
     } catch (error) {
       // Sending an error response
       res.status(500).json({ message: error.message });
