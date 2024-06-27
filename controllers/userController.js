@@ -56,12 +56,11 @@ const userController = {
           .json({ message: "User with this email does not exist" });
       }
 
+      // Generating auth string
       const authString = generateRandomString();
 
       // Update user
-
       user.authString = authString;
-
       await user.save();
 
       // Send email
