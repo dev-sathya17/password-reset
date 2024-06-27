@@ -9,6 +9,7 @@ const userController = require("../controllers/userController");
 
 // Route for registering new users
 userRouter.post("/", userController.register);
+userRouter.post("/forgot", userController.forgotPassword);
 
 // Exporting the router object
 module.exports = userRouter;
