@@ -91,7 +91,7 @@ const userController = {
       // Checking if this auth string is of a valid user
       const user = await User.findOne({ authString });
       if (!user) {
-        return res.json({ message: "Auth string does not match!" });
+        return res.status(404).json({ message: "Auth string does not match!" });
       }
 
       // Sending a success response
