@@ -84,7 +84,6 @@ const userController = {
   },
   // API for verifying the user auth string
   authVerify: async (req, res) => {
-    console.log("entry in auth verify");
     try {
       // Extracting values from request params
       const { authString } = req.params;
@@ -92,11 +91,9 @@ const userController = {
       // Checking if this auth string is of a valid user
       const user = await User.findOne({ authString });
       if (!user) {
-        console.log("Auth string does not match!");
         return res.status(404).json({ message: "Auth string does not match!" });
       }
 
-      console.log("successful");
       // Sending a success response
       res.status(200).json({
         message: "Auth String verified successfully",
