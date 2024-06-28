@@ -109,8 +109,13 @@ npm install bcrypt
    > - Student and mentor routes are defined seperately.
 
 4. Utils.
+
    > - This folder is a utility helper for working with configuration files.
    > - We declare a file, which retrieves the environment variables from the dotenv file and exports them for further usage.
+
+5. Helpers.
+   > - This folder contains functions that help in performing sub-tasks like, generatingAuthString in our case.
+   > - These functions provide us with reusability.
 
 ### Solution.
 
