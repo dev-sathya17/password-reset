@@ -74,11 +74,9 @@ const userController = {
       });
 
       // Sending a success response
-      res
-        .status(200)
-        .json({
-          message: "Password reset link has been sent to your email address",
-        });
+      res.status(200).json({
+        message: "Password reset link has been sent to your email address",
+      });
     } catch (error) {
       // Sending an error response
       res.status(500).json({ message: error.message });
@@ -93,7 +91,7 @@ const userController = {
       // Checking if this auth string is of a valid user
       const user = await User.findOne({ authString });
       if (!user) {
-        return res.status(404).json({ message: "Auth string does not match!" });
+        return res.status(403).json({ message: "Auth string does not match!" });
       }
 
       // Sending a success response
